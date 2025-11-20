@@ -44,3 +44,8 @@ C:\Visual Studio\ProyectoServicio\ProyectoServicio\bin\Debug\System.Threading.Ta
 C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.frmPrincipal.resources
 C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\Proyecto.E4176E61.Up2Date
 C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.frmUsuarios.resources
+C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.Clientes.resources
+C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.Interfaces.Repuestos.resources
+C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.Equipos.resources
+C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.Reparaciones.resources
+C:\Visual Studio\ProyectoServicio\ProyectoServicio\obj\Debug\ProyectoServicio.Pagos.resources

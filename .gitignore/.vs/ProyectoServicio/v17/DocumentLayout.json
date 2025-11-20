@@ -1,0 +1,44 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Visual Studio\\ProyectoServicio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "ProyectoServicio\\ClassDiagram1.cd",
+              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\ClassDiagram1.cd",
+              "RelativeToolTip": "ProyectoServicio\\ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2025-11-20T02:25:44.512Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

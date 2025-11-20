@@ -8,7 +8,6 @@ namespace ProyectoServicio
 {
     internal class Usuario
     {
-        //ATRIBUTOS
         private int id;
         private string user;
         private string password;
@@ -17,11 +16,6 @@ namespace ProyectoServicio
         private int idTipo;
         public Usuario()
         {
-        }
-        public Usuario(string un, string pass)
-        {
-            User = un;
-            Password = pass;
         }
         public int Id { get => id; set => id = value; }
         public string User { get => user; set => user = value; }

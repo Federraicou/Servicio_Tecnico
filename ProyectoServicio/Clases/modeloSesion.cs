@@ -8,12 +8,12 @@ namespace ProyectoServicio
         public Usuario miUsuario(string usuario)
         {
             Usuario miUser = null;
-            Conexion c1 = new Conexion(); // Instancia de la clase conexión
+            Conexion c1 = new Conexion();
             var miConexion = c1.getConexion();
             miConexion.Open();
-            string sql = "Select * from usuarios where User Like @user";
+            string sql = "SELECT * FROM usuarios WHERE User = @user";
             var comando = new MySqlCommand(sql, miConexion);
-            comando.Parameters.AddWithValue("@user", usuario);
+            comando.Parameters.AddWithValue("@user", (usuario ?? "").Trim());
             var reader = comando.ExecuteReader();
             if (reader.HasRows)
             {

@@ -22,7 +22,6 @@ namespace ProyectoServicio
         {
 
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             DialogResult resp = MessageBox.Show("Cerrar sistema, ¿confirma?", "Servicio Tecnico",
@@ -32,28 +31,17 @@ namespace ProyectoServicio
                 Application.Exit();
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            textBox_Usuario.Text = "";
-            textBox_Contraseña.Text = "";
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
-
         private void textBox_Contraseña_TextChanged(object sender, EventArgs e)
         {
-            // No es necesario forzar Focus en cada cambio
         }
-
         private void button_Login_Click(object sender, EventArgs e)
         {
             try
             {
-                String usuario = textBox_Usuario.Text;
+                String usuario = textBox_Usuario.Text.Trim();
                 String pass = textBox_Contraseña.Text;
                 controlSesion control = new controlSesion();
                 String respuestaControlador = control.ctrlLogin(usuario, pass);
@@ -61,7 +49,7 @@ namespace ProyectoServicio
                 {
                     MessageBox.Show(respuestaControlador, "Control de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmPrincipal p = new frmPrincipal();
-                    this.Visible = false; //Oculta el formulario de inicio de sesión.
+                    this.Visible = false; 
                     p.Show();
                 }
                 else
@@ -79,29 +67,28 @@ namespace ProyectoServicio
                 MessageBox.Show(ex.ToString());
             }
         }
-
         private void textBox_Usuario_TextChanged(object sender, EventArgs e)
         {
-
         }
-
         private void button_Registrar_Click(object sender, EventArgs e)
         {
             try
             {
                 using (var form = new frmUsuarios())
                 {
-                    // Abrir modal para crear usuario y volver al login al cerrar.
                     form.ShowDialog(this);
                 }
-
-                // Opcional: llevar el foco al usuario después de cerrar el formulario de registro.
                 textBox_Usuario.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            textBox_Contraseña.Text = "";
+            textBox_Usuario.Text = "";
         }
     }
 }

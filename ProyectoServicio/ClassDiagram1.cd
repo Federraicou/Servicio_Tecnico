@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProyectoServicio.Cliente">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABgAAAAA=</HashCode>
+      <FileName>Clases\Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Conexion">
+    <Position X="14.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAgAAAAAAAAAAEAAAAABAAAAAAAAgARAAA=</HashCode>
+      <FileName>Clases\Conexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.controlSesion">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Clases\controlSesion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.controlUsuario">
+    <Position X="12" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Clases\controlUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Equipo">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAACAAAACAgAAAAAAAAAAAgAEAAAAAAABAAIAAQ=</HashCode>
+      <FileName>Clases\Equipo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloClientes">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACAAAAAAAAAAAAgEAAIAAAAAAAAEAAAAAgAAA=</HashCode>
+      <FileName>Clases\modeloClientes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloEquipos">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAICAAAgAAAAAAAAAEAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\modeloEquipos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloPago">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAACAAAAAAAAAgAAAEAHAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Clases\modeloPago.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloReparaciones">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAIAgCAAAAAAQAAAAAAEBAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\modeloReparaciones.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloRepuestos">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEBAAACAAAAAAAAAAAAAkAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Clases\modeloRepuestos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloSesion">
+    <Position X="12" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Clases\modeloSesion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.modeloUsuarios">
+    <Position X="14.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEIEAACAAAAAEEIAAAAAEAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Clases\modeloUsuarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Pago">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAABAABAAAAAEAAAAAAAEABAAIAAA=</HashCode>
+      <FileName>Clases\Pago.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Reparacion">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAACAAAAAAAAAAEAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Clases\Reparacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Repuesto">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAgAAQAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Clases\Repuesto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProyectoServicio.Usuario">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAQAAACEAAAAgAAAAAAAAAACAAQAAgAEAwA=</HashCode>
+      <FileName>Clases\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

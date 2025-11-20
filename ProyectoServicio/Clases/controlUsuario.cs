@@ -39,7 +39,59 @@ namespace ProyectoServicio
             }
             return rta;
         }
+        public string ctrlActualizarUsuarioPorId(int idUser, Usuario user)
+        {
+            modeloUsuarios modelo = new modeloUsuarios();
+            string rta = "";
 
+            bool cambiarPassword = !string.IsNullOrEmpty(user.Password) || !string.IsNullOrEmpty(user.PasswordConfirma);
+
+            if ((string.IsNullOrEmpty(user.User)) ||
+                (string.IsNullOrEmpty(user.Nombre)) ||
+                (user.IdTipo < 0))
+            {
+                rta = "Datos incompletos para actualizar";
+                return rta;
+            } 
+            modeloSesion ms = new modeloSesion();
+            var existente = ms.miUsuario(user.User?.Trim());
+            if (existente != null && existente.Id != idUser)
+            {
+                return "¡El nombre de usuario ya está en uso por otro registro!";
+            }
+
+            if (cambiarPassword)
+            {
+                if (user.Password != user.PasswordConfirma)
+                    return "¡Las contraseñas no coinciden!";
+                user.Password = generarSHA1(user.Password);
+            }
+
+            user.Id = idUser;
+            if (modelo.actualizarUsuarioPorId(user, cambiarPassword))
+                rta = "¡Actualización exitosa!";
+            else
+                rta = "No se pudo actualizar (verifique que el usuario exista)";
+
+            return rta;
+        }
+        public string ctrlBorrarUsuarioPorId(int idUser)
+        {
+            modeloUsuarios modelo = new modeloUsuarios();
+            string rta = "";
+            if (idUser <= 0)
+            {
+                rta = "Usuario inválido";
+            }
+            else
+            {
+                if (modelo.eliminarUsuarioPorId(idUser))
+                    rta = "¡Usuario eliminado!";
+                else
+                    rta = "No se pudo eliminar el usuario.";
+            }
+            return rta;
+        }
         private string generarSHA1(string cadena)
         {
             UTF8Encoding enc = new UTF8Encoding();
