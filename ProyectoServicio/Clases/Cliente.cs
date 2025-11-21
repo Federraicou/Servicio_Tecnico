@@ -8,13 +8,16 @@ namespace ProyectoServicio
 {
     internal class Cliente
     {
+        private int idCliente;
+        private string nombre;
+        private string telefono;
         public Cliente(string nombre, string telefono)
         {
             Nombre = nombre;
             Telefono = telefono;
         }
-        public int IdCliente { get; set; }
-        public string Nombre { get; set; }
-        public string Telefono { get; set; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
     }
 }

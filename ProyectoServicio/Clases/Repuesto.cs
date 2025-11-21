@@ -8,15 +8,20 @@ namespace ProyectoServicio
 {
     internal class Repuesto
     {
+        private int idrepuesto;
+        private string nombre;
+        private int precio;
+        private int cantidad;
+
         public Repuesto(string nombre, int precio, int cantidad)
         {
             Nombre = nombre;
             Precio = precio;
             Cantidad = cantidad;
         }
-        public int Idrepuesto { get; set; }
-        public string Nombre { get; set; }
-        public int Precio { get; set; }
-        public int Cantidad { get; set; }
+        public int Idrepuesto { get => idrepuesto; set => idrepuesto = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public int Precio { get => precio; set => precio = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
     }
 }

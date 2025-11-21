@@ -8,14 +8,28 @@ namespace ProyectoServicio
 {
     internal class Equipo
     {
-        public int IdEquipo { get; set; }
-        public string Procesador { get; set; }
-        public DateTime FechaIngreso { get; set; }
-        public string Tipo { get; set; }
-        public int IdCliente { get; set; }
-        public string Ram { get; set; }
-        public string Fuente { get; set; }
-        public string Almacenamiento { get; set; }
-        public string Gpu { get; set; }
+        private int idEquipo;
+        private int idCliente;
+        private DateTime fechaIngreso;
+        private string tipo;
+        private string procesador;
+        private string ram;
+        private string fuente;
+        private string gpu;
+        private string almacenamiento;
+        private Cliente cliente;
+        public Equipo()
+        {
+        }
+        public int IdEquipo { get => idEquipo; set => idEquipo = value; }
+        public int IdCliente { get => idCliente; set => idCliente = value; }
+        public DateTime FechaIngreso { get => fechaIngreso; set => fechaIngreso = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
+        public string Procesador { get => procesador; set => procesador = value; }
+        public string Ram { get => ram; set => ram = value; }
+        public string Fuente { get => fuente; set => fuente = value; }
+        public string Gpu { get => gpu; set => gpu = value; }
+        public string Almacenamiento { get => almacenamiento; set => almacenamiento = value; }
+        public Cliente Cliente { get; set; }
     }
 }
