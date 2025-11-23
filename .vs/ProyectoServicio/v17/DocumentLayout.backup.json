@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Visual Studio\\ProyectoServicio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
-      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\interfaces\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\interfaces\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\interfaces\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\interfaces\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +30,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClassDiagram1.cd",
-              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\ClassDiagram1.cd",
-              "RelativeDocumentMoniker": "ProyectoServicio\\ClassDiagram1.cd",
-              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\ClassDiagram1.cd*",
-              "RelativeToolTip": "ProyectoServicio\\ClassDiagram1.cd*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
-              "WhenOpened": "2025-11-21T18:33:54.684Z",
+              "DocumentIndex": 1,
+              "Title": "frmPrincipal.cs",
+              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "RelativeToolTip": "ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAlwEEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T01:29:11.133Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "ProyectoServicio\\Interfaces\\frmPrincipal.cs",
+              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\frmPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "ProyectoServicio\\Interfaces\\frmPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T01:29:07.385Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
