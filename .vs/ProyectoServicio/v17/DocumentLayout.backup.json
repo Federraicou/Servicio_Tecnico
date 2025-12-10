@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Visual Studio\\ProyectoServicio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|C:\\Visual Studio\\ProyectoServicio\\proyectoservicio\\interfaces\\reparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\interfaces\\reparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|C:\\Visual Studio\\ProyectoServicio\\proyectoservicio\\clases\\modelopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\clases\\modelopago.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|C:\\Visual Studio\\ProyectoServicio\\proyectoservicio\\interfaces\\pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\interfaces\\pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\clases\\modeloreparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\clases\\modeloreparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,37 +27,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Reparaciones.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\Reparaciones.cs",
-              "RelativeDocumentMoniker": "ProyectoServicio\\Interfaces\\Reparaciones.cs",
-              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\Reparaciones.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProyectoServicio\\Interfaces\\Reparaciones.cs [Dise\u00F1o]",
+              "Title": "modeloReparaciones.cs",
+              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloReparaciones.cs",
+              "RelativeDocumentMoniker": "ProyectoServicio\\Clases\\modeloReparaciones.cs",
+              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloReparaciones.cs",
+              "RelativeToolTip": "ProyectoServicio\\Clases\\modeloReparaciones.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T22:35:57.362Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "modeloPago.cs",
-              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloPago.cs",
-              "RelativeDocumentMoniker": "ProyectoServicio\\Clases\\modeloPago.cs",
-              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloPago.cs",
-              "RelativeToolTip": "ProyectoServicio\\Clases\\modeloPago.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAASwCEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T18:47:08.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Pagos.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\Pagos.cs",
-              "RelativeDocumentMoniker": "ProyectoServicio\\Interfaces\\Pagos.cs",
-              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Interfaces\\Pagos.cs [Dise\u00F1o]",
-              "RelativeToolTip": "ProyectoServicio\\Interfaces\\Pagos.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-09T22:28:23.294Z"
+              "WhenOpened": "2025-12-10T14:19:29.022Z",
+              "EditorCaption": ""
             }
           ]
         }
