@@ -83,8 +83,8 @@ namespace ProyectoServicio.Interfaces
             int.TryParse(txtPrecio.Text, out precio);
             int.TryParse(txtCantidad.Text, out cantidad);
             modeloRepuestos m = new modeloRepuestos();
-            Repuesto r = new Repuesto(nombre, precio, cantidad);
-            if (m.registrarRepuesto(r))
+            bool ok = m.registrarRepuesto(nombre, precio, cantidad);
+            if (ok)
             {
                 MessageBox.Show("Repuesto guardado correctamente.");
                 cargarDataGrid();
@@ -108,9 +108,8 @@ namespace ProyectoServicio.Interfaces
             int.TryParse(txtPrecio.Text, out precio);
             int.TryParse(txtCantidad.Text, out cantidad);
             modeloRepuestos m = new modeloRepuestos();
-            Repuesto r = new Repuesto(nombre, precio, cantidad);
-            r.Idrepuesto = selectedRepuestId;
-            if (m.actualizarRepuesto(r))
+            bool ok = m.actualizarRepuesto(selectedRepuestId, nombre, precio, cantidad);
+            if (ok)
             {
                 MessageBox.Show("Repuesto actualizado correctamente.");
                 cargarDataGrid();

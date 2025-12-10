@@ -40,6 +40,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.labelFechaEstimada = new System.Windows.Forms.Label();
             this.dateTimePickerFechaEstimada = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Cliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReparaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@
             this.labelEquipo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEquipo.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelEquipo.Location = new System.Drawing.Point(9, 41);
+            this.labelEquipo.Location = new System.Drawing.Point(12, 118);
             this.labelEquipo.Name = "labelEquipo";
             this.labelEquipo.Size = new System.Drawing.Size(73, 16);
             this.labelEquipo.TabIndex = 0;
@@ -61,7 +63,7 @@
             this.labelRepuesto.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelRepuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRepuesto.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelRepuesto.Location = new System.Drawing.Point(9, 116);
+            this.labelRepuesto.Location = new System.Drawing.Point(12, 185);
             this.labelRepuesto.Name = "labelRepuesto";
             this.labelRepuesto.Size = new System.Drawing.Size(74, 16);
             this.labelRepuesto.TabIndex = 1;
@@ -73,7 +75,7 @@
             this.labelDiagnostico.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDiagnostico.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelDiagnostico.Location = new System.Drawing.Point(9, 195);
+            this.labelDiagnostico.Location = new System.Drawing.Point(9, 248);
             this.labelDiagnostico.Name = "labelDiagnostico";
             this.labelDiagnostico.Size = new System.Drawing.Size(90, 16);
             this.labelDiagnostico.TabIndex = 2;
@@ -82,7 +84,7 @@
             // comboBoxRepuesto
             // 
             this.comboBoxRepuesto.FormattingEnabled = true;
-            this.comboBoxRepuesto.Location = new System.Drawing.Point(12, 135);
+            this.comboBoxRepuesto.Location = new System.Drawing.Point(12, 204);
             this.comboBoxRepuesto.Name = "comboBoxRepuesto";
             this.comboBoxRepuesto.Size = new System.Drawing.Size(200, 24);
             this.comboBoxRepuesto.TabIndex = 3;
@@ -90,14 +92,14 @@
             // comboBoxIdEquipo
             // 
             this.comboBoxIdEquipo.FormattingEnabled = true;
-            this.comboBoxIdEquipo.Location = new System.Drawing.Point(12, 60);
+            this.comboBoxIdEquipo.Location = new System.Drawing.Point(12, 137);
             this.comboBoxIdEquipo.Name = "comboBoxIdEquipo";
             this.comboBoxIdEquipo.Size = new System.Drawing.Size(200, 24);
             this.comboBoxIdEquipo.TabIndex = 4;
             // 
             // textBoxDiagnostico
             // 
-            this.textBoxDiagnostico.Location = new System.Drawing.Point(12, 214);
+            this.textBoxDiagnostico.Location = new System.Drawing.Point(12, 267);
             this.textBoxDiagnostico.Name = "textBoxDiagnostico";
             this.textBoxDiagnostico.Size = new System.Drawing.Size(200, 22);
             this.textBoxDiagnostico.TabIndex = 5;
@@ -161,7 +163,7 @@
             this.labelFechaEstimada.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelFechaEstimada.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFechaEstimada.ForeColor = System.Drawing.Color.DarkBlue;
-            this.labelFechaEstimada.Location = new System.Drawing.Point(9, 278);
+            this.labelFechaEstimada.Location = new System.Drawing.Point(9, 318);
             this.labelFechaEstimada.Name = "labelFechaEstimada";
             this.labelFechaEstimada.Size = new System.Drawing.Size(119, 16);
             this.labelFechaEstimada.TabIndex = 10;
@@ -170,10 +172,30 @@
             // dateTimePickerFechaEstimada
             // 
             this.dateTimePickerFechaEstimada.CalendarMonthBackground = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePickerFechaEstimada.Location = new System.Drawing.Point(12, 297);
+            this.dateTimePickerFechaEstimada.Location = new System.Drawing.Point(12, 337);
             this.dateTimePickerFechaEstimada.Name = "dateTimePickerFechaEstimada";
             this.dateTimePickerFechaEstimada.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerFechaEstimada.TabIndex = 11;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 81);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // Cliente
+            // 
+            this.Cliente.AutoSize = true;
+            this.Cliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cliente.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Cliente.Location = new System.Drawing.Point(9, 62);
+            this.Cliente.Name = "Cliente";
+            this.Cliente.Size = new System.Drawing.Size(60, 18);
+            this.Cliente.TabIndex = 13;
+            this.Cliente.Text = "Cliente";
             // 
             // Reparaciones
             // 
@@ -182,6 +204,8 @@
             this.BackgroundImage = global::ProyectoServicio.Properties.Resources.photo_1557683316_973673baf926;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Cliente);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePickerFechaEstimada);
             this.Controls.Add(this.labelFechaEstimada);
             this.Controls.Add(this.btnGuardar);
@@ -217,5 +241,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label labelFechaEstimada;
         private System.Windows.Forms.DateTimePicker dateTimePickerFechaEstimada;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label Cliente;
     }
 }

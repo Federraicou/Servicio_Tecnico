@@ -27,18 +27,13 @@ namespace ProyectoServicio
             try
             {
                 Usuario user = new Usuario();
-
-                // Atención: en el diseñador actual txtUsuario contiene "Nombre y Apellido"
-                // y txtNombre contiene "Nombre de usuario". Invertimos las asignaciones.
-                user.User = txtNombre.Text;         // nombre de usuario (login)
-                user.Nombre = txtUsuario.Text;      // nombre y apellido (visible)
+                user.User = txtNombre.Text;         
+                user.Nombre = txtUsuario.Text;     
                 user.Password = txtPass.Text;
                 user.PasswordConfirma = txtConfirma.Text;
                 controlUsuario control = new controlUsuario();
                 MessageBox.Show(control.ctrlRegistroUsuarios(user),
                 "Control de usuarios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                // refrescar grid tras alta
                 cargarDataGrid();
             }
             catch (Exception ex)

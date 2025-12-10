@@ -30,6 +30,21 @@ namespace ProyectoServicio
             conectar.Close();
             return tabla;
         }
+
+        
+        internal bool registrarRepuesto(string nombre, int precio, int cantidad)
+        {
+            var r = new Repuesto(nombre, precio, cantidad);
+            return registrarRepuesto(r);
+        }
+
+        
+        internal bool actualizarRepuesto(int idRepuesto, string nombre, int precio, int cantidad)
+        {
+            var r = new Repuesto(nombre, precio, cantidad) { Idrepuesto = idRepuesto };
+            return actualizarRepuesto(r);
+        }
+
         internal bool registrarRepuesto(Repuesto r)
         {
             if (r == null) return false;

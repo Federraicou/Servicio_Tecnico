@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,12 @@ namespace ProyectoServicio
         public Reparaciones()
         {
             InitializeComponent();
-            CargarComboEquipos();
+            CargarComboClientes();
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             CargarComboRepuestos();
             cargarDataGridReparaciones();
         }
+
         private void LimpiarCampos()
         {
             comboBoxIdEquipo.SelectedIndex = -1;
@@ -28,25 +31,102 @@ namespace ProyectoServicio
             selectedReparacionId = -1;
             dateTimePickerFechaEstimada.Value = DateTime.Now;
         }
-        private void CargarComboEquipos()
+
+       
+        private void CargarComboClientes()
         {
             try
             {
-                modeloEquipos me = new modeloEquipos();
-                var tabla = me.obtenerEquipos();
+                modeloClientes mc = new modeloClientes();
+                var tabla = mc.obtenerClientes();
                 if (tabla != null)
                 {
-                    comboBoxIdEquipo.DataSource = tabla;
-                    comboBoxIdEquipo.ValueMember = "id_equipo";
-                    comboBoxIdEquipo.DisplayMember = "id_equipo";
-                    comboBoxIdEquipo.SelectedIndex = -1;
+                    if (!tabla.Columns.Contains("Display"))
+                        tabla.Columns.Add("Display", typeof(string));
+
+                    foreach (DataRow r in tabla.Rows)
+                    {
+                        var id = r["id_cliente"]?.ToString() ?? "";
+                        var nombre = r["Nombre"]?.ToString() ?? "";
+                        r["Display"] = id + " - " + nombre;
+                    }
+
+                    comboBox1.DataSource = tabla;
+                    comboBox1.ValueMember = "id_cliente";
+                    comboBox1.DisplayMember = "Display";
+                    comboBox1.SelectedIndex = -1;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error cargando equipos en combo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error cargando clientes en combo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBox1.SelectedIndex < 0)
+                {
+                    comboBoxIdEquipo.DataSource = null;
+                    return;
+                }
+
+                int idCliente;
+                if (int.TryParse(comboBox1.SelectedValue?.ToString(), out idCliente))
+                {
+                    CargarEquiposPorCliente(idCliente);
+                }
+                else
+                {
+                    comboBoxIdEquipo.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cambiar cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarEquiposPorCliente(int idCliente)
+        {
+            try
+            {
+                Conexion miConexion = new Conexion();
+                using (MySqlConnection conectar = miConexion.getConexion())
+                {
+                    conectar.Open();
+                    string sql = "SELECT id_equipo, tipo FROM equipo WHERE id_cliente = @id_cliente";
+                    using (MySqlCommand comando = new MySqlCommand(sql, conectar))
+                    {
+                        comando.Parameters.AddWithValue("@id_cliente", idCliente);
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(comando))
+                        {
+                            DataTable tabla = new DataTable();
+                            adapter.Fill(tabla);
+                            if (!tabla.Columns.Contains("Display"))
+                                tabla.Columns.Add("Display", typeof(string));
+                            foreach (DataRow r in tabla.Rows)
+                            {
+                                var id = r["id_equipo"]?.ToString() ?? "";
+                                var tipo = r["tipo"]?.ToString() ?? "";
+                                r["Display"] = id + " - " + tipo;
+                            }
+
+                            comboBoxIdEquipo.DataSource = tabla;
+                            comboBoxIdEquipo.ValueMember = "id_equipo";   
+                            comboBoxIdEquipo.DisplayMember = "Display";   
+                            comboBoxIdEquipo.SelectedIndex = -1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error cargando equipos del cliente: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void CargarComboRepuestos()
         {
             try
@@ -66,6 +146,7 @@ namespace ProyectoServicio
                 MessageBox.Show("Error cargando repuestos en combo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void cargarDataGridReparaciones()
         {
             try
@@ -92,6 +173,7 @@ namespace ProyectoServicio
                 MessageBox.Show("Error cargando reparacion: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void dataGridViewReparaciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -123,6 +205,7 @@ namespace ProyectoServicio
             var diagnostico = row.Cells["diagnostico"].Value?.ToString() ?? "";
             textBoxDiagnostico.Text = diagnostico;
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -132,31 +215,31 @@ namespace ProyectoServicio
                     MessageBox.Show("Seleccione un Id de Equipo.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var reparacion = new ProyectoServicio.Reparacion
-                {
-                    Diagnostico = textBoxDiagnostico.Text.Trim(),
-                    IdEquipo = Convert.ToInt32(comboBoxIdEquipo.SelectedValue),
-                    FechaEstimada = dateTimePickerFechaEstimada.Value,
-                    Idrepuesto = Convert.ToInt32(comboBoxRepuesto.SelectedValue),
-                };
+
+                string diagnostico = textBoxDiagnostico.Text.Trim();
+                int idEquipo = Convert.ToInt32(comboBoxIdEquipo.SelectedValue);
+                DateTime fechaEstimada = dateTimePickerFechaEstimada.Value;
+                int idRepuesto = comboBoxRepuesto.SelectedIndex >= 0 ? Convert.ToInt32(comboBoxRepuesto.SelectedValue) : 0;
+
                 modeloReparaciones mr = new modeloReparaciones();
-                bool ok = mr.registrarReparacion(reparacion);
+                bool ok = mr.registrarReparacion(diagnostico, idEquipo, fechaEstimada, idRepuesto);
                 if (ok)
                 {
-                    MessageBox.Show("Equipo guardado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reparación guardada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarDataGridReparaciones();
                     LimpiarCampos();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo guardar el equipo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo guardar la reparación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error guardando equipo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error guardando reparación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -166,32 +249,31 @@ namespace ProyectoServicio
                     MessageBox.Show("Seleccione una reparacion (doble click en la fila) para modificar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var reparacion = new Reparacion
-                {
-                    IdReparacion = selectedReparacionId,
-                    Diagnostico = textBoxDiagnostico.Text.Trim(),
-                    FechaEstimada = dateTimePickerFechaEstimada.Value,
-                    IdEquipo = comboBoxIdEquipo.SelectedIndex >= 0 ? Convert.ToInt32(comboBoxIdEquipo.SelectedValue) : 0,
-                    Idrepuesto = comboBoxRepuesto.SelectedIndex >= 0 ? Convert.ToInt32(comboBoxRepuesto.SelectedValue) : 0,
-                };
+
+                string diagnostico = textBoxDiagnostico.Text.Trim();
+                int idEquipo = comboBoxIdEquipo.SelectedIndex >= 0 ? Convert.ToInt32(comboBoxIdEquipo.SelectedValue) : 0;
+                DateTime fechaEstimada = dateTimePickerFechaEstimada.Value;
+                int idRepuesto = comboBoxRepuesto.SelectedIndex >= 0 ? Convert.ToInt32(comboBoxRepuesto.SelectedValue) : 0;
+
                 modeloReparaciones mr = new modeloReparaciones();
-                bool ok = mr.actualizarReparacion(reparacion);
+                bool ok = mr.actualizarReparacion(selectedReparacionId, diagnostico, idEquipo, fechaEstimada, idRepuesto);
                 if (ok)
                 {
-                    MessageBox.Show("Reparacion actualizado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reparación actualizada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarDataGridReparaciones();
                     LimpiarCampos();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar la reparacion.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo actualizar la reparación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error modificando Reparacion: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error modificando reparación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             try
@@ -207,20 +289,21 @@ namespace ProyectoServicio
                 bool ok = mr.eliminarReparacionPorId(selectedReparacionId);
                 if (ok)
                 {
-                    MessageBox.Show("Equipo eliminado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Reparación eliminada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarDataGridReparaciones();
                     LimpiarCampos();
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo eliminar el equipo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo eliminar la reparación.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error borrando equipo: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error borrando reparación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private void Reparaciones_Load(object sender, EventArgs e)
         {
         }

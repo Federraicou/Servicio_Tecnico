@@ -24,12 +24,21 @@ namespace ProyectoServicio
             try
             {
                 modeloClientes mc = new modeloClientes();
-                var tabla = mc.obtenerClientes(); // devuelve id_cliente, Nombre, Telefono
+                var tabla = mc.obtenerClientes();
                 if (tabla != null)
                 {
+                    if (!tabla.Columns.Contains("Display"))
+                        tabla.Columns.Add("Display", typeof(string));
+                    foreach (DataRow r in tabla.Rows)
+                    {
+                        var id = r["id_cliente"]?.ToString() ?? "";
+                        var nombre = r["Nombre"]?.ToString() ?? "";
+                        r["Display"] = id + " - " + nombre;
+                    }
+
                     comboBox_IdCliente.DataSource = tabla;
-                    comboBox_IdCliente.ValueMember = "id_cliente";
-                    comboBox_IdCliente.DisplayMember = "id_cliente"; // el usuario pidió ver los ids
+                    comboBox_IdCliente.ValueMember = "id_cliente";  
+                    comboBox_IdCliente.DisplayMember = "Display";   
                     comboBox_IdCliente.SelectedIndex = -1;
                 }
             }
@@ -103,19 +112,17 @@ namespace ProyectoServicio
                     MessageBox.Show("Seleccione un Id de cliente.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var equipo = new ProyectoServicio.Equipo
-                {
-                    Procesador = textBox_Procesador.Text.Trim(),
-                    FechaIngreso = dateTimePicker_FechaIngreso.Value,
-                    Tipo = comboBox_TipoPC.Text.Trim(),
-                    IdCliente = Convert.ToInt32(comboBox_IdCliente.SelectedValue),
-                    Ram = textBox_Ram.Text.Trim(),
-                    Fuente = textBox_Fuente.Text.Trim(),
-                    Almacenamiento = textBox_Almacenamiento.Text.Trim(),
-                    Gpu = textBox_Gpu.Text.Trim()
-                };
+                string procesador = textBox_Procesador.Text.Trim();
+                DateTime fechaIngreso = dateTimePicker_FechaIngreso.Value;
+                string tipo = comboBox_TipoPC.Text.Trim();
+                int idCliente = Convert.ToInt32(comboBox_IdCliente.SelectedValue);
+                string ram = textBox_Ram.Text.Trim();
+                string fuente = textBox_Fuente.Text.Trim();
+                string almacenamiento = textBox_Almacenamiento.Text.Trim();
+                string gpu = textBox_Gpu.Text.Trim();
+
                 modeloEquipos me = new modeloEquipos();
-                bool ok = me.registrarEquipo(equipo);
+                bool ok = me.registrarEquipo(procesador, fechaIngreso, tipo, idCliente, ram, fuente, almacenamiento, gpu);
                 if (ok)
                 {
                     MessageBox.Show("Equipo guardado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -141,20 +148,17 @@ namespace ProyectoServicio
                     MessageBox.Show("Seleccione un equipo (doble click en la fila) para modificar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var equipo = new Equipo
-                {
-                    IdEquipo = selectedEquipoId,
-                    Procesador = textBox_Procesador.Text.Trim(),
-                    FechaIngreso = dateTimePicker_FechaIngreso.Value,
-                    Tipo = comboBox_TipoPC.Text.Trim(),
-                    IdCliente = comboBox_IdCliente.SelectedIndex >= 0 ? Convert.ToInt32(comboBox_IdCliente.SelectedValue) : 0,
-                    Ram = textBox_Ram.Text.Trim(),
-                    Fuente = textBox_Fuente.Text.Trim(),
-                    Almacenamiento = textBox_Almacenamiento.Text.Trim(),
-                    Gpu = textBox_Gpu.Text.Trim()
-                };
+                string procesador = textBox_Procesador.Text.Trim();
+                DateTime fechaIngreso = dateTimePicker_FechaIngreso.Value;
+                string tipo = comboBox_TipoPC.Text.Trim();
+                int idCliente = comboBox_IdCliente.SelectedIndex >= 0 ? Convert.ToInt32(comboBox_IdCliente.SelectedValue) : 0;
+                string ram = textBox_Ram.Text.Trim();
+                string fuente = textBox_Fuente.Text.Trim();
+                string almacenamiento = textBox_Almacenamiento.Text.Trim();
+                string gpu = textBox_Gpu.Text.Trim();
+
                 modeloEquipos me = new modeloEquipos();
-                bool ok = me.actualizarEquipo(equipo);
+                bool ok = me.actualizarEquipo(selectedEquipoId, procesador, fechaIngreso, tipo, idCliente, ram, fuente, almacenamiento, gpu);
                 if (ok)
                 {
                     MessageBox.Show("Equipo actualizado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);

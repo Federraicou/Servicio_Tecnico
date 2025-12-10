@@ -19,8 +19,9 @@ namespace ProyectoServicio
             miConexion = new Conexion();
             conectar = miConexion.getConexion();
             conectar.Open();
-            sql = "SELECT id_equipo, id_cliente, fecha_ingreso," +
-                " tipo , procesador , ram , fuente , almacenamiento , gpu  FROM equipo";
+            sql = "SELECT e.id_equipo, e.id_cliente, c.nombre AS `Nombre`, e.fecha_ingreso, " +
+                  "e.tipo, e.procesador, e.ram, e.fuente, e.almacenamiento, e.gpu " +
+                  "FROM equipo e INNER JOIN cliente c ON e.id_cliente = c.id_cliente";
             MySqlCommand comando = new MySqlCommand(sql, conectar);
             MySqlDataAdapter adapter = new MySqlDataAdapter { SelectCommand = comando };
             DataTable tabla = new DataTable();
@@ -29,6 +30,39 @@ namespace ProyectoServicio
             conectar.Close();
             return tabla;
         }
+        internal bool registrarEquipo(string procesador, DateTime fechaIngreso, string tipo, int idCliente, string ram, string fuente, string almacenamiento, string gpu)
+        {
+            var e = new Equipo
+            {
+                Procesador = procesador,
+                FechaIngreso = fechaIngreso,
+                Tipo = tipo,
+                IdCliente = idCliente,
+                Ram = ram,
+                Fuente = fuente,
+                Almacenamiento = almacenamiento,
+                Gpu = gpu
+            };
+            return registrarEquipo(e);
+        }
+
+        internal bool actualizarEquipo(int idEquipo, string procesador, DateTime fechaIngreso, string tipo, int idCliente, string ram, string fuente, string almacenamiento, string gpu)
+        {
+            var e = new Equipo
+            {
+                IdEquipo = idEquipo,
+                Procesador = procesador,
+                FechaIngreso = fechaIngreso,
+                Tipo = tipo,
+                IdCliente = idCliente,
+                Ram = ram,
+                Fuente = fuente,
+                Almacenamiento = almacenamiento,
+                Gpu = gpu
+            };
+            return actualizarEquipo(e);
+        }
+
         internal bool registrarEquipo(Equipo e)
         {
             if (e == null) return false;
