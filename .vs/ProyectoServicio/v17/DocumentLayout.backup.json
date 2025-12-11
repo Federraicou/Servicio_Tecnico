@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Visual Studio\\ProyectoServicio\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|c:\\visual studio\\proyectoservicio\\proyectoservicio\\clases\\modeloreparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA2B08B5-959B-4C8F-9398-C6EBE31ACD6A}|ProyectoServicio\\ProyectoServicio.csproj|solutionrelative:proyectoservicio\\clases\\modeloreparaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -23,19 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "modeloReparaciones.cs",
-              "DocumentMoniker": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloReparaciones.cs",
-              "RelativeDocumentMoniker": "ProyectoServicio\\Clases\\modeloReparaciones.cs",
-              "ToolTip": "C:\\Visual Studio\\ProyectoServicio\\ProyectoServicio\\Clases\\modeloReparaciones.cs",
-              "RelativeToolTip": "ProyectoServicio\\Clases\\modeloReparaciones.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T14:19:29.022Z",
-              "EditorCaption": ""
             }
           ]
         }
